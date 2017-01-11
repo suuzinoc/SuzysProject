@@ -1,0 +1,9 @@
+﻿<h2>Add Entry</h2>
+
+<form ng-submit="controller.addJournal()">
+    <label>Message</label>
+    <input ng-model="controller.journalEntry.message" />
+    <label>Subject</label>
+    <input ng-model="controller.journalEntry.subject" />
+    <button type="submit">Add</button>
+</form>

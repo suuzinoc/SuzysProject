@@ -1,0 +1,48 @@
+
+
+   
+        
+
+    
+    <div class="col-lg-6 col-lg-offset-3">
+        <div style="margin:2%;" class="form-group; header-styling ">
+            <div style="color:maroon">
+                <h3>Search through your entries</h3>
+                <input ng-model="search" style="color:maroon" class="alert-danger" id="Text1" type="text" />
+                <button class="btn alert-warning" type="submit">Search</button>
+                <a class="btn alert-success" ng-href="/blog">Add</a>
+                <table style="width:100%"></table>
+            </div>
+        </div>
+
+
+        <div class="panel panel-danger">
+            <div class="panel-heading">Dreams</div>
+            <div class="panel-body">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="entry in controller.journals| filter: search">
+
+                            <td>
+                                {{entry.subject}}
+                            </td>
+                            <td>
+                                <a class="btn alert-info" ui-sref="editEntry({id:entry.id})">Edit</a>
+                            </td>
+                            <td>
+                                <a class="btn alert-danger" ui-sref="deleteEntry({id:entry.id})">Delete</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+

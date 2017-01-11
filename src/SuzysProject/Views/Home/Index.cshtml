@@ -1,0 +1,67 @@
+
+<html ng-app="SuzysProject">
+<head>
+    <title>SuzysProject</title>
+    <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Chewy" rel="stylesheet">
+    <base href="/" />
+</head>
+<body ng-controller="AccountController as account">
+  
+        <!--Navbar-->
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"></a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a  style="color:maroon" href="/">Home<span class="sr-only">(current)</span></a></li>
+                        <li><a  style="color:maroon" ng-show="account.isLoggedIn()" href="/suzy">Diary</a></li>
+                        <li><a  style="color:maroon" ng-show="account.isLoggedIn()" href="/blog">My Dreams</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            @*<a href="/login">LogIn</a>*@
+                            <a style="color:maroon" href="/login" ng-show="!account.isLoggedIn()">Login</a>
+                            <a style="color:maroon" href="#" ng-click="account.logout()" ng-show="account.isLoggedIn()">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    <div class="container header-styling">
+        <ui-view></ui-view>
+    </div>
+
+    <!-- Library Files -->
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-resource/angular-resource.js"></script>
+    <script src="/bower_components/angular-animate/angular-animate.js"></script>
+    <script src="/bower_components/angular-touch/angular-touch.js"></script>
+    <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+
+    <!-- App Files-->
+    <script src="/ngapp/app.js"></script>
+    <script src="/ngapp/controllers/controllers.js"></script>
+    <script src="/ngapp/services/services.js"></script>
+    <script src="~/ngApp/controllers/journalController.js"></script>
+    <script src="~/ngApp/services/journalServices.js"></script>
+
+    <!-- Security -->
+    <script src="/ngapp/controllers/accountcontroller.js"></script>
+    <script src="/ngapp/services/accountservice.js"></script>
+    <script src="~/ngApp/controllers/journalController.js"></script>
+    <script src="~/ngApp/services/journalServices.js"></script>
+</body>
+</html>
