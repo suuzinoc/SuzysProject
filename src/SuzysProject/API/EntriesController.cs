@@ -22,8 +22,7 @@ namespace SuzysProject.API
         [HttpGet]
         public List<JournalEntry> Get() //gets first get method
         {
-            return _services.GetAllEntries();
-       
+            return _services.GetAllEntries();    
         }
 
         // GET api/values/5
@@ -39,7 +38,6 @@ namespace SuzysProject.API
         {
             _services.AddEntry(journalEntry);
         }
-
 
         // DELETE api/values/5
         [HttpDelete("{id}")]

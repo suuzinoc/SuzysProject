@@ -48,9 +48,7 @@ namespace SuzysProject.Services
         {
             var entry = _repo.Query<JournalEntry>().Where(j => j.Id == id).FirstOrDefault();
             _repo.Delete(entry);
-        }
-        
-        
+        }      
     }
 }
 
